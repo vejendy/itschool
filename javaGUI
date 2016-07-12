@@ -4,7 +4,7 @@ public class WindowHelloMain {
 		JFrame frame = new JFrame("Hellp Java Program");  /*Hello Java Program프레임을 생성*/
 		frame.setLocation(500,400); /*프레임 위치 지점 500,400*/
 		frame.setPreferredSize(new Dimension(200,100)); /*프레임 크기지정 200,100*/
-		Container contentPane = frame.getContentPane(); /*컨테이너생성*/
+		Container contentPane = frame.getContentPane(); /*컨테이너에 컨텐트팬을 넘김*/
 		JTextField text = new JTextField(20); /*텍스트필드를 생성 크기20*/
 		JPanel panel = new JPanel();  /*패널을 생성*/
 		JButton button1 = new JButton("button1"); /*버튼1 생성*/
