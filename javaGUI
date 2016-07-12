@@ -1,0 +1,26 @@
+public class WindowHelloMain {
+
+	public static void main(String[] args) {
+		JFrame frame = new JFrame("Hellp Java Program");  /*Hello Java Program프레임을 생성*/
+		frame.setLocation(500,400); /*프레임 위치 지점 500,400*/
+		frame.setPreferredSize(new Dimension(200,100)); /*프레임 크기지정 200,100*/
+		Container contentPane = frame.getContentPane(); /*컨테이너생성*/
+		JTextField text = new JTextField(20); /*텍스트필드를 생성 크기20*/
+		JPanel panel = new JPanel();  /*패널을 생성*/
+		JButton button1 = new JButton("button1"); /*버튼1 생성*/
+		JButton button2 = new JButton("button2"); /*버튼2 생성*/
+		panel.add(button1); /*패널에 버튼1을 추가*/
+		panel.add(button2); /*패널에 버튼2를 추가*/
+		JLabel label = new JLabel("hello"); /*hello로 출력되는 새로운 라벨을 추가*/
+		contentPane.add(text, BorderLayout.CENTER); /*중앙에 텍스트를 위치*/
+		contentPane.add(panel, BorderLayout.SOUTH); /*아래쪽에 패널을 위치*/
+		contentPane.add(label, BorderLayout.EAST);  /*오른쪽에 라벨을 위치 */
+		ActionListener listener=new windowHelloCickListener(); /*액션리스너 불러오기*/
+		button1.addActionListener(listener);  /*버튼1에 액션리스너기능 부여*/
+		button2.addActionListener(listener);  /*버튼2에 액션리스너기능 부여*/
+		frame.pack();/*프레임 패킹*/
+		frame.setVisible(true);/*시각화(출력)*/
+		
+	}
+
+}
