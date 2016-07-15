@@ -13,20 +13,24 @@ public class GUICalClickListener implements ActionListener {
 	private String num1;
 	private String num2;
 	private String mark;
+	boolean start = true;
 	ArrayList <String> number1 = new ArrayList();
 	ArrayList <String> number2 = new ArrayList();
 	GUICalClickListener(JTextField text1, JTextField text2){
 		this.text1 = text1;
 		this.text2 = text2;
-		text2 = new JTextField("0");
+		
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		int sum = 0;
 		String get = e.getActionCommand();
 		boolean numcheck = chkNum(get);
-		boolean start = true;
 		try{
+			if(!start){
+				text2.setText("");
+				start = true;
+			}
 			if(numcheck){
 				text2.setText(text2.getText()+get);
 				number1.add(text2.getText());
@@ -57,7 +61,8 @@ public class GUICalClickListener implements ActionListener {
 				num1 = null;
 				num2 = null;
 				mark = null;
-			}	
+				start = false;				
+			}
 			if(get.equals("C")){
 				text1.setText("");
 				text2.setText("");
